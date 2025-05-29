@@ -42,8 +42,14 @@ The dataset contains financial information from publicly listed companies on the
 
 ## Result Summary
 
-Random Forest & XGBoost achieved the best rewsults when trained on a balanced dataset (50:50 class split).
+Random Forest & XGBoost achieved the best results when trained on a balanced dataset (50:50 class split).
 - **Best Accuracy**: 98.94%
 - **False Positive Rate**: 1.96%
 - **False Negative Rate**: 0.19%
 - **AUC-ROC**: 1.00
+
+
+<p align="center">
+  <img src="media/rf_aucroc.png" alt="Random Forest AUC-ROC" width="400"/>
+  <img src="media/rf_prc.png" alt="Random Forest Precision-Recall Curve" width="400"/>
+</p>
