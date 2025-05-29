@@ -53,3 +53,6 @@ Random Forest & XGBoost achieved the best results when trained on a balanced dat
   <img src="media/rf_aucroc.png" alt="Random Forest AUC-ROC" width="400"/>
   <img src="media/rf_prc.png" alt="Random Forest Precision-Recall Curve" width="400"/>
 </p>
+
+## Licence 
+This project is licenced under the [MIT licence](LICENSE)
