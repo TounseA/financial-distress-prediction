@@ -1,47 +1,49 @@
 # Predicting Financial Distress Using ML
-The prediction of company financial failure is of interest to investors. In this project, the plan is to **employ a number of ML techniques** to the problem of predicting bankruptcy. A set of features need to be identified. The accuracy of **each method should be calculated and compared**.
+This project explores the application of machine learning techniques to predict financial distress (i.e., bankruptcy). The goal is to assess & identify the most effective model among several ML techniques and evaluate their performance against the Altman Z-score, a traditional financial distress prediction metric.
+
 
 ## Project Overview 
-The models tested in this project are the following:
+The following models were implemented & compared:
+
 - Logistic Regression 
 - Random Forests 
 - Neural Networks
 - XGBoost
-- Using the Altman Z-Score as the baseline
 
-### Dataset Desciption
+## Dataset
 
-#### Dataset Source:
+**Source**: [Kaggle - US Company Bankruptcy Prediction Dataset](https://www.kaggle.com/datasets/utkarshx27/american-companies-bankruptcy-prediction-dataset).
 
-The dataset is publicly available on Kaggle. You can find it [here](https://www.kaggle.com/datasets/utkarshx27/american-companies-bankruptcy-prediction-dataset).
+The dataset contains financial information from publicly listed companies on the NYSE and NASDAQ, covering the years **1999 to 2018**.
+- **8,262** unique companies
+- **78,682** observations (firm-year combinations)
+- Includes various financial metrics such as current assets, depreciation, cost of gold, etc. (see Kaglle for full list)
 
-To ensure fair and consistent evaluation, all final versions of models use the same dataset.
+**Target Variable**
+- 1: Bankrupt (filed under chapter 11 or chapter 7)
+- 0: Not bankrupt
 
-The dataset, US Company Bankruptcy Prediction Dataset, includes financial data for public companies listed on the NYSE and NASDAQ (1999–2018). Key details:
-- 8,262 distinct companies
-- 78,682 observations (firm-year combinations)
-
-Key financial features included in dataset:
-- Current Assests (X1)
-- Cost Of Goods Sold (X2)
-- Depreciation and Amortization (X3)
-- ...and more (see the Notebook for full attribute list description).
-
-Bankruptcy is labeled as:
-
-- 1: If the company files for Chapter 11 (reorganization) or Chapter 7 (liquidation).
-- 0: If the company operates normally.
+> **NOTE**: The dataset file is not included in this repository. Please download it from the Kaggle link above.
 
 ## How To Run
-Requirements:
 
+**Requirements**:
 - Python 3.x
+- Libraries: `pandas`, `numpy`, `matplotlib`, `scikit-learn`, `xgboost`
+- Any notebook enviroment: e.g., Jupyter or Google Colab
 
-Libraries: `pandas`, `numpy`, `matplotlib`, and `scikit-learn`
+**Steps**:
+1. Clone this repository 
+2. Download the dataset from Kaggle ([here](https://www.kaggle.com/datasets/utkarshx27/american-companies-bankruptcy-prediction-dataset))
+3. Open the notebook file: `Predicting Financial Distress Using ML.ipynb`. 
+4. Run all cells to reproduce the results
 
-Steps:
+**Note**: This project was devloped & tested using Google Colab.
 
-Open the notebook file: `FD_V2.ipynb`. 
+## Result Summary
 
-Run it using any notebook environment (e.g., Jupyter, Google Colab, etc.).
-
+Random Forest & XGBoost achieved the best rewsults when trained on a balanced dataset (50:50 class split).
+- **Best Accuracy**: 98.94%
+- **False Positive Rate**: 1.96%
+- **False Negative Rate**: 0.19%
+- **AUC-ROC**: 1.00
